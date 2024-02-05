@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+    />
+  </head>
+  <body>
+    <div class="calc-2">
+      <div class="rectangle-parent">
+        <div class="frame-child"></div>
+        <div class="rectangle-group"></div>
+          <input type="text" id="display" readonly>
+      </div>
+      <main class="ellipse-frames1">
+        <div class="ellipse-frames-child"></div>
+        <div class="ellipse-frames2">
+          <div class="ellipse-frames3"></div>
+          <div class="a-c-container"><button onclick="appendCharacter('0')">0</button></div>
+        </div>
+        <div class="ellipse-frames4">
+          <div class="ellipse-frames-item"></div>
+          <div class="div1"><button onclick="appendCharacter('1')">1</button></div>
+        </div>
+        <div class="ellipse-frames5">
+          <div class="ellipse-frames-inner"></div>
+          <div class="div2"><button onclick="appendCharacter('4')">4</button></div>
+        </div>
+        <div class="ellipse-frames6">
+          <div class="ellipse-div"></div>
+          <div class="div3"><button onclick="appendCharacter('7')">7</button></div>
+        </div>
+        <div class="ellipse-frames7">
+          <div class="ellipse-frames-child1"></div>
+          <div class="ac"> <button onclick="clearDisplay()">AC</button></div>
+        </div>
+        <div class="ellipse-frames8">
+          <div class="ellipse-frames-child2"></div>
+          <div class="div4"><button onclick="appendCharacter('.')">.</button></div>
+        </div>
+        <div class="ellipse-frames9">
+          <div class="ellipse-frames-child3"></div>
+          <div class="div5"><button onclick="appendCharacter('2')">2</button></div>
+        </div>
+        <div class="ellipse-frames10">
+          <div class="ellipse-frames-child4"></div>
+          <div class="div6"><button onclick="appendCharacter('5')">5</button></div>
+        </div>
+        <div class="ellipse-frames11">
+          <div class="ellipse-frames-child5"></div>
+          <div class="div7"><button onclick="appendCharacter('8')">8</button></div>
+        </div>
+        <div class="ellipse-frames15">
+          <div class="ellipse-frames-child7"></div>
+          <div class="div9"><button onclick="appendCharacter('3')">3</button></div>
+        </div>
+        <div class="ellipse-frames16">
+          <div class="ellipse-frames-child8"></div>
+          <div class="div10"><button onclick="appendCharacter('6')">6</button></div>
+        </div>
+        <div class="ellipse-frames17">
+          <div class="ellipse-frames-child9"></div>
+          <div class="div11"><button onclick="appendCharacter('9')">9</button></div>
+        </div>
+        <div class="ellipse-frames18">
+          <div class="ellipse-frames-child10"></div>
+          <div class="div12"><button onclick="appendCharacter('/')">/</button></div>
+        </div>
+        <div class="ellipse-frames19">
+          <div class="ellipse-frames-child11"></div>
+          <div class="div13"><button onclick="calculate()">=</button></div>
+        </div>
+        <div class="ellipse-frames20">
+          <div class="ellipse-frames-child12"></div>
+          <div class="div14"><button onclick="appendCharacter('+')">+</button></div>
+        </div>
+        <div class="ellipse-frames21">
+          <div class="ellipse-frames-child13"></div>
+          <div class="div15"><button onclick="appendCharacter('-')">-</button></div>
+        </div>
+        <button class="ellipse-frames22">
+          <div class="ellipse-parent">
+            <div class="frame-item"></div>
+            <img class="frame-inner" alt="" src="./frame-7.svg" />
+          </div>
+        </button>
+      </main>
+    </div>
+    <script>
+      let display = document.getElementById('display');
+  
+      function clearDisplay() {
+        display.value = '';
+        display.removeAttribute('readonly');
+      }
+  
+      function appendCharacter(character) {
+        display.value += character;
+      }
+  
+      function calculate() {
+        try {
+          display.value = eval(display.value);
+        } catch (error) {
+          display.value = 'Error';
+        }
+        display.setAttribute('readonly', 'true');
+      }
+    </script>
+  </body>
+</html>
